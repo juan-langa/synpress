@@ -391,6 +391,13 @@ declare namespace Cypress {
      */
     rejectMetamaskToAddNetwork(): Chainable<boolean>;
     /**
+     * Allow site to add new RPC in metamask
+     * @example
+     * cy.allowMetamaskToAddRPC()
+     * cy.allowMetamaskToAddRPC('close') // waitForEvent
+     */
+    allowMetamaskToAddRPC(waitForEvent?: string): Chainable<boolean>;
+    /**
      * Allow site to switch network in metamask
      * @example
      * cy.allowMetamaskToSwitchNetwork()

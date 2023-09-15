@@ -416,6 +416,14 @@ Reject site to add new network in metamask.
 rejectMetamaskToAddNetwork(): Chainable<Subject>;
 ```
 
+#### `cy.allowMetamaskToAddRPC()`
+
+Allow site to add new RPC in metamask.
+
+```ts
+allowMetamaskToAddRPC(waitForEvent?: string): Chainable<Subject>;
+```
+
 #### `cy.allowMetamaskToSwitchNetwork()`
 
 Allow site to switch network in metamask.

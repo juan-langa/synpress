@@ -231,6 +231,10 @@ Cypress.Commands.add('rejectMetamaskToAddNetwork', () => {
   return cy.task('rejectMetamaskToAddNetwork');
 });
 
+Cypress.Commands.add('allowMetamaskToAddRPC', waitForEvent => {
+  return cy.task('allowMetamaskToAddRPC', { waitForEvent });
+});
+
 Cypress.Commands.add('allowMetamaskToSwitchNetwork', () => {
   return cy.task('allowMetamaskToSwitchNetwork');
 });

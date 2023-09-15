@@ -531,6 +531,12 @@ describe('Metamask', () => {
         expect(rejected).to.be.true;
       });
     });
+    it(`allowMetamaskToAddRPC should approve permission to add rPC`, () => {
+      cy.get('#addEthereumChain').click();
+      cy.allowMetamaskToAddRPC().then(approved => {
+        expect(approved).to.be.true;
+      });
+    });
     it(`allowMetamaskToSwitchNetwork should approve permission to switch network`, () => {
       cy.get('#switchEthereumChain').click();
       cy.allowMetamaskToSwitchNetwork().then(approved => {
