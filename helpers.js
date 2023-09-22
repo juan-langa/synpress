@@ -155,11 +155,19 @@ module.exports = {
                 username: process.env.GH_USERNAME,
                 password: process.env.GH_PAT,
               },
+              headers: {
+		            'Content-Type': 'application/json',
+	            },
             },
           );
         } else {
           response = await axios.get(
             'https://api.github.com/repos/metamask/metamask-extension/releases',
+            {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            },
           );
         }
         filename = response.data[0].assets[0].name;
