@@ -148,6 +148,9 @@ module.exports = {
     try {
       if (version === 'latest' || !version) {
         if (process.env.GH_USERNAME && process.env.GH_PAT) {
+          //
+          console.log('++++++ VERSION === latest || WITH GH_ username && pat ++++++')
+          //
           response = await axios.get(
             'https://api.github.com/repos/metamask/metamask-extension/releases',
             {
@@ -161,6 +164,9 @@ module.exports = {
             },
           );
         } else {
+          //
+          console.log('++++++ VERSION === latest || NO VERSION --> NO GH_ username/pat ++++++')
+          //
           response = await axios.get(
             'https://api.github.com/repos/metamask/metamask-extension/releases',
             {
@@ -183,6 +189,9 @@ module.exports = {
         log(
           `Metamask version found! Filename: ${filename}; Download url: ${downloadUrl}; Tag name: ${tagName}`,
         );
+        //
+        console.log('++++++ VERSION PROVIDED ++++++')
+        //
       }
       return {
         filename,
